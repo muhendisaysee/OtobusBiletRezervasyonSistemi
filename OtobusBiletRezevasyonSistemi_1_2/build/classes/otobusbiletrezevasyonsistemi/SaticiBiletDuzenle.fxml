@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="otobusbiletrezevasyonsistemi.SaticiBiletDuzenleController">
+   <children>
+      <TableView fx:id="biletTableView" layoutX="39.0" layoutY="50.0" prefHeight="300.0" prefWidth="1000.0">
+         <columns>
+            <TableColumn fx:id="bilet_idColumn" minWidth="125.0" prefWidth="45.0" text="Bilet id" />
+            <TableColumn fx:id="kalkisYeriColumn" minWidth="125.0" text="Kalkış Yeri" />
+            <TableColumn fx:id="varisYeriColumn" minWidth="125.0" prefWidth="71.0" text="Varış Yeri" />
+            <TableColumn fx:id="kalkisTarihiColumn" minWidth="125.0" prefWidth="82.0" text="Kalkış Tarihi" />
+            <TableColumn fx:id="varisTarihiColumn" minWidth="125.0" prefWidth="94.0" text="Varış Tarihi" />
+            <TableColumn fx:id="kalkis_saatiColumn" minWidth="125.0" prefWidth="73.0" text="Kalkış Saati" />
+            <TableColumn fx:id="fiyatColumn" minWidth="125.0" prefWidth="38.0" text="Fiyatı" />
+            <TableColumn fx:id="saticiColumn" minWidth="125.0" prefWidth="92.0" text="Satıcı numarası" />
+         </columns>
+      </TableView>
+      <TextField fx:id="fiyati" layoutX="123.0" layoutY="533.0" />
+      <TextField fx:id="varis_yeri" layoutX="124.0" layoutY="371.0" />
+      <TextField fx:id="kalkis_yeri" layoutX="123.0" layoutY="405.0" />
+      <Text layoutX="52.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varış Yeri : " />
+      <Text layoutX="50.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kalkış Yeri : " />
+      <Text layoutX="47.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varış Tarihi : " />
+      <Text layoutX="46.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kalkış Tarihi : " />
+      <Text layoutX="63.0" layoutY="550.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fiyatı : " />
+      <Button layoutX="198.0" layoutY="582.0" mnemonicParsing="false" onAction="#biletEkle" text="BİLETİ EKLE" />
+      <Button layoutX="297.0" layoutY="372.0" mnemonicParsing="false" onAction="#biletSil" text="SEÇİLEN BİLETİ SİL" />
+      <Button layoutX="658.0" layoutY="473.0" mnemonicParsing="false" onAction="#biletGuncelle" text="BİLET GÜNCELLE" />
+      <Text layoutX="459.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BİLET BİLGİLERİNİ DÜZENLE" wrappingWidth="306.74267578125">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Text>
+      <Button layoutX="82.0" layoutY="670.0" mnemonicParsing="false" onAction="#cikis" text="ÇIKIŞ" />
+      <Text layoutX="48.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kalkış saati : " />
+      <TextField fx:id="kalkis_saati" layoutX="123.0" layoutY="503.0" />
+      <Button layoutX="26.0" layoutY="670.0" mnemonicParsing="false" onAction="#geri" text="GERİ" />
+      <Text fill="RED" layoutX="440.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GÜNCELLEME İŞLEMİ İÇİN BİLETİ SEÇİNİZ VE GÜNCELLEMEK İSTEDİĞİNİZ PARAMETREYİ SEÇİNİZ" />
+      <ComboBox fx:id="guncellenecek" layoutX="612.0" layoutY="395.0" prefWidth="150.0" />
+      <TextField fx:id="guncelDeger" layoutX="613.0" layoutY="432.0" />
+      <Text layoutX="505.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GÜNCEL DEĞER : " />
+      <DatePicker fx:id="varis_tarihi" layoutX="123.0" layoutY="445.0" />
+      <DatePicker fx:id="kalkis_tarihi" layoutX="123.0" layoutY="473.0" />
+      <Text layoutX="802.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ARAMAK İSTEDİĞİNİZ BİLET İD : " />
+      <TableView fx:id="arananBiletTableView" layoutX="802.0" layoutY="395.0" prefHeight="59.0" prefWidth="531.0">
+        <columns>
+          <TableColumn fx:id="arananBilet_idColumn" prefWidth="75.0" text="Bilet id" />
+          <TableColumn fx:id="arananKalkisYeriColumn" prefWidth="75.0" text="Kalkış Yeri" />
+            <TableColumn fx:id="arananVarisYeriColumn" prefWidth="75.0" text="Varış Yeri" />
+            <TableColumn fx:id="arananKalkisTarihiColumn" prefWidth="75.0" text="Kalkış Tarihi" />
+            <TableColumn fx:id="arananVarisTarihiColumn" prefWidth="75.0" text="Varış Tarihi" />
+            <TableColumn fx:id="arananKalkis_saatiColumn" prefWidth="75.0" text="Kalkış Saati" />
+            <TableColumn fx:id="arananBiletFiyatColumn" text="Fiyatı" />
+        </columns>
+      </TableView>
+      <TextField fx:id="aranacakBilet_id" layoutX="986.0" layoutY="495.0" />
+      <Button layoutX="1060.0" layoutY="521.0" mnemonicParsing="false" onAction="#biletAra" text="BİLET ARA" />
+   </children>
+</AnchorPane>
